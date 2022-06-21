@@ -19,7 +19,7 @@ const questions = () => {
         },
         {
             type: 'input',
-            name: 'Installation',
+            name: 'installation',
             message: 'What does one have to do in order to install your project?',
         },
         {
@@ -57,33 +57,42 @@ const questions = () => {
 };
 
 
-const generateReadMe = ({}) => 
-`# 
+const generateReadMe = ({ project, desription, installation, usage, contributing, test, license, github, email}) => 
+`# ${project}
 
 ## Description
+${desription}
 
 ## Table of Contents
 
 ## Installations
+${installation}
 
 ## Usage
+${usage}
 
 ## License
+${license}
 
 ## Contributing
+${contributing}
 
 ## Test
+${test}
 
-## Questions`
+## Questions
+${github}
+${email}
+`
 
 
-function init() {}
+const init = () => {
 questions()
 
     .then((answers) => fs.writeFileSync('README.md', generateReadMe(answers)))
-    .then(() => console.log('Successfully wrote to index.html'))
+    .then(() => console.log('Successfully generated a Readme!'))
     .catch((err) => console.error(err));
-
+};
 init();
 
 
