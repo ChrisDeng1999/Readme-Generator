@@ -3,7 +3,7 @@ const fs = require('fs');
 const generateMarkdown = require("./utils/generateMarkdown");
 
 
-
+//This is the prompt that users can fill out 
 inquirer.prompt
     ([
         {
@@ -73,6 +73,8 @@ inquirer.prompt
             message: 'Please enter your Email.',
         },
     ])
+
+    //this generates the readme file
     .then((answer) => fs.writeFile("README.md", generateMarkdown(answer), err => {
         if (err) {
             console.log(err);

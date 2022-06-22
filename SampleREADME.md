@@ -1,12 +1,10 @@
-# ReadMe Generator 
+# Sample ReadMe Generator 
+![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)
+
 
 
 ## Description
-This is a ReadMe Generator that allows users to create a customized ReadMe file based on their own repository. I wanted to create this app to help out people who have a hard time structuring their own ReadMe's. 
-
-Here is also a link to the functionality of this project.
-
-https://www.loom.com/share/c17b1555c90a44ea8e59febdc074396e
+I wanted to create a application that allows users to create a professional ReadMe file. I built this project to assist users in created a professional ReadMe file. My application allows users who have trouble creating their own ReadMe files to have a nice template to work off of. I learned how to use inquirer as well as fs to generate and populate a ReadMe file. 
 
 ## Table of Contents
 
@@ -20,19 +18,18 @@ https://www.loom.com/share/c17b1555c90a44ea8e59febdc074396e
 ## Installations
 To install this project you have to clone the repository.
 
-
-
 ## Usage
 Once you have cloned the repo, you then type in the terminal <node index.js>.
 
-You will then be prompted with questions to fill out and once you fill everything out you should get a ReadMe that looks similar to the image below.
+## Contributing
+Bryan, Mike, and Sammy. 
 
-![Image of a sample ReadMe file](sampReadMe.jpg)
-
-
+## Test
+I did not write any test.
 
 ## Questions
 - https://github.com/ChrisDeng1999
 - <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=cdeng1999@gmail.com" target= "_blank">cdeng1999@gmail.com</a>
 
 #### Here is my email above. If you have any questions, comments, or concerns please feel free to send me an email and wait 2-3 business days for a response! Hope you enjoyed my application and have a wonderful day :D
+
