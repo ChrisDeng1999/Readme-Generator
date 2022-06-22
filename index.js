@@ -12,8 +12,23 @@ const questions = () => {
         },
         {
             type: 'input',
-            name: 'description',
-            message: 'Please write a short description about your project!',
+            name: 'descriptionOne',
+            message: 'What was your motivation for this project?',
+        },
+        {
+            type: 'input',
+            name: 'descriptionTwo',
+            message: 'Why did you build this project?',
+        },
+        {
+            type: 'input',
+            name: 'descriptionThree',
+            message: 'What problem does your problem solve?',
+        },
+        {
+            type: 'input',
+            name: 'descriptionFour',
+            message: 'What did you learn from your project?',
         },
         {
             type: 'input',
@@ -23,7 +38,7 @@ const questions = () => {
         {
             type: 'input',
             name: 'usage',
-            message: 'Please say what your website is used for.',
+            message: 'How do you use your application?',
         },
         {
             type: 'input',
@@ -33,7 +48,7 @@ const questions = () => {
         {
             type: 'input',
             name: 'test',
-            message: 'blank',
+            message: 'If you wrote any test for your application please list them below.',
         },
         {
             type: 'list',
@@ -49,7 +64,7 @@ const questions = () => {
         {
             type: 'input',
             name: 'github',
-            message: 'Please enter your GitHub username.',
+            message: 'Please enter a link to your github repository.',
         },
         {
             type: 'input',
@@ -60,20 +75,21 @@ const questions = () => {
 };
 
 
-const generateReadMe = ({ project, description, installation, usage, contributing, test, license, github, email}) => 
+const generateReadMe = ({ project, descriptionOne, descriptionTwo, descriptionThree, descriptionFour, installation, usage, contributing, test, license, github, email}) => 
 `# ${project}
 
 ## Description
-${description}
+${descriptionOne} ${descriptionTwo} ${descriptionThree} ${descriptionFour} 
 
 ## Table of Contents
 
--[Installations](#installation)
--[Usage](#usage)
--[License](#license)
--[Contributing](#contributing)
--[Test](#test)
--[Questions](#github)
+[Installations](#installation)\
+[Usage](#usage)\
+[License](#license)\
+[Contributing](#contributing)\
+[Test](#test)\
+[Questions](#questions)\
+
 
 ## Installations
 ${installation}
@@ -91,8 +107,9 @@ ${contributing}
 ${test}
 
 ## Questions
-${github}
-${email}
+- ${github}
+- ${email}
+Here is my email above. If you have any questions, comments, or concerns please feel free to send me an email and wait 2-3 business days for a response! Hope you enjoyed my application and have a wonderful day :D
 `
 
 
