@@ -56,16 +56,16 @@ inquirer.prompt
             name: 'license',
             message: 'Please select a license.',
             choices: [
-                "![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)", 
-                "![License: IPL 1.0](https://img.shields.io/badge/License-IPL%201.0-blue.svg)", 
+                "![License](https://img.shields.io/badge/License-MIT-yellow.svg)", 
+                "![License](https://img.shields.io/badge/License-IPL%201.0-blue.svg)", 
                 "![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)", 
-                "![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)"
+                "![License](https://img.shields.io/badge/License-GPL%20v3-blue.svg)"
             ],
         },
         {
             type: 'input',
             name: 'github',
-            message: 'Please enter a link to your github repository.',
+            message: 'Please enter your github username.',
         },
         {
             type: 'input',
@@ -73,8 +73,12 @@ inquirer.prompt
             message: 'Please enter your Email.',
         },
     ])
-    .then((answer) => fs.writeFile('README.md', generateMarkdown(answer), (err, data) => {
-        console.log("Readme is Created!");
+    .then((answer) => fs.writeFile("README.md", generateMarkdown(answer), err => {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log("A ReadMe file was Successfully Created!");
+        };
     })
     );
 
