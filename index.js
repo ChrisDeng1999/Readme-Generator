@@ -1,7 +1,5 @@
-
 const inquirer = require('inquirer');
 const fs = require('fs');
-
 
 
 
@@ -41,7 +39,12 @@ const questions = () => {
             type: 'list',
             name: 'license',
             message: 'Please select a license.',
-            choices: ["blank", "blank", "blank"],
+            choices: [
+                "![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)", 
+                "![License: IPL 1.0](https://img.shields.io/badge/License-IPL%201.0-blue.svg)", 
+                "![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)", 
+                "![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)"
+            ],
         },
         {
             type: 'input',
@@ -57,13 +60,20 @@ const questions = () => {
 };
 
 
-const generateReadMe = ({ project, desription, installation, usage, contributing, test, license, github, email}) => 
+const generateReadMe = ({ project, description, installation, usage, contributing, test, license, github, email}) => 
 `# ${project}
 
 ## Description
-${desription}
+${description}
 
 ## Table of Contents
+
+-[Installations](#installation)
+-[Usage](#usage)
+-[License](#license)
+-[Contributing](#contributing)
+-[Test](#test)
+-[Questions](#github)
 
 ## Installations
 ${installation}
