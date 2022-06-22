@@ -1,10 +1,11 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateMarkdown = require("./utils/generateMarkdown");
 
 
 
-const questions = () => {
-    return inquirer.prompt([
+inquirer.prompt
+    ([
         {
             type: 'input',
             name: 'project',
@@ -23,7 +24,7 @@ const questions = () => {
         {
             type: 'input',
             name: 'descriptionThree',
-            message: 'What problem does your problem solve?',
+            message: 'What problem does your application solve?',
         },
         {
             type: 'input',
@@ -71,55 +72,14 @@ const questions = () => {
             name: 'email',
             message: 'Please enter your Email.',
         },
-    ]);
-};
+    ])
+    .then((answer) => fs.writeFile('README.md', generateMarkdown(answer), (err, data) => {
+        console.log("Readme is Created!");
+    })
+    );
 
 
-const generateReadMe = ({ project, descriptionOne, descriptionTwo, descriptionThree, descriptionFour, installation, usage, contributing, test, license, github, email}) => 
-`# ${project}
-
-## Description
-${descriptionOne} ${descriptionTwo} ${descriptionThree} ${descriptionFour} 
-
-## Table of Contents
-
-[Installations](#installation)\
-[Usage](#usage)\
-[License](#license)\
-[Contributing](#contributing)\
-[Test](#test)\
-[Questions](#questions)\
 
 
-## Installations
-${installation}
-
-## Usage
-${usage}
-
-## License
-${license}
-
-## Contributing
-${contributing}
-
-## Test
-${test}
-
-## Questions
-- ${github}
-- ${email}
-Here is my email above. If you have any questions, comments, or concerns please feel free to send me an email and wait 2-3 business days for a response! Hope you enjoyed my application and have a wonderful day :D
-`
-
-
-const init = () => {
-questions()
-
-    .then((answers) => fs.writeFileSync('README.md', generateReadMe(answers)))
-    .then(() => console.log('Successfully generated a Readme!'))
-    .catch((err) => console.error(err));
-};
-init();
 
 
